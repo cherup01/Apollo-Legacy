@@ -455,8 +455,6 @@ namespace pocketmine {
 		return str_replace(["\\", ".php", "phar://", str_replace(["\\", "phar://"], ["/", ""], \pocketmine\PATH), str_replace(["\\", "phar://"], ["/", ""], \pocketmine\PLUGIN_PATH)], ["/", "", "", "", ""], $path);
 	}
 
-	$exitCode = 0;
-
 		$pthreads_version = phpversion("pthreads");
 		if(substr_count($pthreads_version, ".") < 2){
 			$pthreads_version = "0.$pthreads_version";
