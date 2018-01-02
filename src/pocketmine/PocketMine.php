@@ -457,8 +457,6 @@ namespace pocketmine {
 
 	$exitCode = 0;
 
-		}
-
 		$pthreads_version = phpversion("pthreads");
 		if(substr_count($pthreads_version, ".") < 2){
 			$pthreads_version = "0.$pthreads_version";
