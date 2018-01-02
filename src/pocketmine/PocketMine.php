@@ -85,7 +85,7 @@ namespace pocketmine {
 	const CODENAME = "Legacy";
 	const GENISYS_API_VERSION = '2.0.0';
 
-	const MIN_PHP_VERSION = "7.2.0RC3";
+	const MIN_PHP_VERSION = "7.0.14";
 
 	/*
 	 * Startup code. Do not look at it, it may harm you.
@@ -457,18 +457,6 @@ namespace pocketmine {
 
 	$exitCode = 0;
 
-	do{
-		$errors = 0;
-
-		if(PHP_INT_SIZE < 8){
-			$logger->critical("Running " . \pocketmine\NAME . " with 32-bit systems/PHP is no longer supported. Please upgrade to a 64-bit system or use a 64-bit PHP binary.");
-			$exitCode = 1;
-			break;
-		}
-
-		if(php_sapi_name() !== "cli"){
-			$logger->critical("You must run " . \pocketmine\NAME . " using the CLI.");
-			++$errors;
 		}
 
 		$pthreads_version = phpversion("pthreads");
