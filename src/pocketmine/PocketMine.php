@@ -455,14 +455,22 @@ namespace pocketmine {
 		return str_replace(["\\", ".php", "phar://", str_replace(["\\", "phar://"], ["/", ""], \pocketmine\PATH), str_replace(["\\", "phar://"], ["/", ""], \pocketmine\PLUGIN_PATH)], ["/", "", "", "", ""], $path);
 	}
 
-		$pthreads_version = phpversion("pthreads");
-		if(substr_count($pthreads_version, ".") < 2){
-			$pthreads_version = "0.$pthreads_version";
-		}
-		if(version_compare($pthreads_version, "3.1.7-dev") < 0){
-			$logger->critical("pthreads >= 3.1.7-dev is required, while you have $pthreads_version.");
-			++$errors;
-		}
+    $errors = 0;
+ 
+     if(php_sapi_name() !== "cli"){
+         $logger->critical("You must run Apollo using the CLI.");
+         ++$errors;
+     }
+ 
+     $pthreads_version = phpversion("pthreads");
+    if(substr_count($pthreads_version, ".") < 2){
+        $pthreads_version = "0.$pthreads_version";
+    }
+	
+    if(version_compare($pthreads_version, "3.1.5") < 0){
+        $logger->critical("pthreads >= 3.1.5 is required, while you have $pthreads_version.");
+        ++$errors;
+     }
 
 		if(extension_loaded("leveldb")){
 			$leveldb_version = phpversion("leveldb");
