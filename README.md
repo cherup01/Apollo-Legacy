@@ -62,6 +62,7 @@ Apollo is for all. Anyone can copy-paste generator and other features.
 
 - [ ] implement xp and more xp things
 
+- [ ] inplement mob ai and riding entitys
 
  If you have epic ideas, create an issue and tell us the idea!
 
