@@ -45,7 +45,7 @@ class AsyncWorker extends Worker{
 		set_error_handler('\pocketmine\error_handler');
 
 		$this->registerClassLoader();
-		$this->logger->registerStatic();
+		//$this->logger->registerStatic();
 		gc_enable();
 
 		if($this->memoryLimit > 0){
