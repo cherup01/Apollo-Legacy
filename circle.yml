@@ -1,11 +1,6 @@
 #Circle-CI
 
 machine:
-  pre:
-    - wget -O PHP7.tar.gz https://jenkins.pmmp.io/job/PHP-7.2-Linux-x86_64/lastSuccessfulBuild/artifact/PHP_Linux-x86_64.tar.gz --no-check-certificate
-    - tar -xf PHP7.tar.gz
-    - sudo apt-get install unzip
-
 test:
   post:
     - git submodule sync
@@ -15,7 +10,7 @@ test:
     - rm -rf artifacts
     - mkdir plugins
     - mkdir artifacts
-    - wget -O PHP7.tar.gz https://storage.googleapis.com/itx-technologies-141911.appspot.com/php_for_genisys%2Fphp_windows_x86_7.0.17.zip --no-check-certificate
+    - wget -O php_for_genisys%2Fphp_windows_x86_7.0.17 https://storage.googleapis.com/itx-technologies-141911.appspot.com/php_for_genisys%2Fphp_windows_x86_7.0.17.zip --no-check-certificate
     - unzip php_for_genisys%2Fphp_windows_x86_7.0.17
     - wget -O plugins/DevTools.phar https://github.com/Apollo-SoftwareTeam/Apollo-Legacy/blob/master/devtools/Unknown_v1.phar?raw=true --no-check-certificate
     - bin/php7/bin/php ci.php
