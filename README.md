@@ -64,6 +64,8 @@ Apollo is for all. Anyone can copy-paste generator and other features.
 
 - [ ] inplement mob ai and riding entitys
 
+- [ ] importing stuff of the old Apollo from Nycuro (%10 done)
+
  If you have epic ideas, create an issue and tell us the idea!
 
 ## Licensing information
