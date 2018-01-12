@@ -1,6 +1,5 @@
 #Circle-CI
 
-machine:
 test:
   post:
     - git submodule sync
