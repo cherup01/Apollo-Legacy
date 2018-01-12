@@ -204,7 +204,7 @@ namespace pocketmine {
 	date_default_timezone_set("UTC");
 
 	$logger = new MainLogger(\pocketmine\DATA . "server.log");
-	$logger->registerStatic();
+	//$logger->registerStatic();
 
 	do{
 		$timezone = ini_get("date.timezone");
