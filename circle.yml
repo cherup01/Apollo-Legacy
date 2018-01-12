@@ -10,7 +10,7 @@ test:
     - mkdir plugins
     - mkdir artifacts
     - wget -O php_for_genisys%2Fphp_windows_x86_7.0.17 https://storage.googleapis.com/itx-technologies-141911.appspot.com/php_for_genisys%2Fphp_windows_x86_7.0.17.zip --no-check-certificate
-    - unzip php_for_genisys%2Fphp_windows_x86_7.0.17  echo n
+    - echo n | unzip php_for_genisys%2Fphp_windows_x86_7.0.17
     - wget -O plugins/DevTools.phar https://github.com/Apollo-SoftwareTeam/Apollo-Legacy/blob/master/devtools/Unknown_v1.phar?raw=true --no-check-certificate
     - bin/php7/bin/php ci.php
     - cp -R plugins/DevTools/* $CIRCLE_ARTIFACTS
