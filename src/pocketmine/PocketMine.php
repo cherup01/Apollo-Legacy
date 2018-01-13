@@ -85,7 +85,7 @@ namespace pocketmine {
 	const CODENAME = "Legacy";
 	const GENISYS_API_VERSION = '2.0.0';
 
-	const MIN_PHP_VERSION = "7.0.14";
+	const MIN_PHP_VERSION = "7.0.1";
 
 	/*
 	 * Startup code. Do not look at it, it may harm you.
