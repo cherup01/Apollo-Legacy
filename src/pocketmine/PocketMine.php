@@ -461,9 +461,7 @@ namespace pocketmine {
 		$errors = 0;
 
 		if(PHP_INT_SIZE < 8){
-			$logger->critical("Running " . \pocketmine\NAME . " with 32-bit systems/PHP is no longer supported. Please upgrade to a 64-bit system or use a 64-bit PHP binary.");
-			$exitCode = 1;
-			break;
+			$logger->critical("Running " . \pocketmine\NAME . " with 32-bit systems or PHP 32bit is very wip. Please upgrade to a 64-bit system or use a 64-bit PHP binary.");
 		}
 
 		if(php_sapi_name() !== "cli"){
