@@ -66,7 +66,7 @@ class MainLogger extends \AttachableThreadedLogger{
 			throw new \RuntimeException("MainLogger has been already created");
 		}
 		static::$logger = $this;
-		touch($logFile);
+	//	touch($logFile); //fix for android ?
 		$this->logFile = $logFile;
 		$this->logDebug = (bool) $logDebug;
 		$this->logStream = new \Threaded;
