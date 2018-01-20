@@ -1,5 +1,4 @@
 <?php
-                      |___/
 
 namespace pocketmine\nbt\tag;
 
