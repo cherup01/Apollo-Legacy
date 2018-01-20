@@ -92,7 +92,7 @@ class Potion extends Item{
 		}
 	}
 
-	public function getEffect() : ?Effect{
+	public function getEffect() : Effect{
 		return self::getEffectByMeta($this->meta);
 	}
 
@@ -147,7 +147,7 @@ class Potion extends Item{
 		}
 	}
 
-	public static function getEffectByMeta(int $meta) : ?Effect{
+	public static function getEffectByMeta(int $meta) : Effect{
 		$effect = null;
 		switch($meta){
 			case Potion::NIGHT_VISION:
