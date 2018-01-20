@@ -92,7 +92,7 @@ class CompoundTag extends NamedTag implements \ArrayAccess{
 	 * @return NamedTag|null
 	 * @throws \RuntimeException if the tag exists and is not of the expected type (if specified)
 	 */
-	public function getTag(string $name, string $expectedClass = NamedTag::class) : ?NamedTag{
+	public function getTag(string $name, string $expectedClass = NamedTag::class) : NamedTag{
 		assert(is_a($expectedClass, NamedTag::class, true));
 		$tag = $this->{$name} ?? null;
 		if($tag !== null and !($tag instanceof $expectedClass)){
@@ -109,7 +109,7 @@ class CompoundTag extends NamedTag implements \ArrayAccess{
 	 * @param string $name
 	 * @return ListTag|null
 	 */
-	public function getListTag(string $name) : ?ListTag{
+	public function getListTag(string $name) : ListTag{
 		return $this->getTag($name, ListTag::class);
 	}
 
@@ -120,7 +120,7 @@ class CompoundTag extends NamedTag implements \ArrayAccess{
 	 * @param string $name
 	 * @return CompoundTag|null
 	 */
-	public function getCompoundTag(string $name) : ?CompoundTag{
+	public function getCompoundTag(string $name) : CompoundTag{
 		return $this->getTag($name, CompoundTag::class);
 	}
 
@@ -195,7 +195,7 @@ class CompoundTag extends NamedTag implements \ArrayAccess{
 	 *
 	 * @return int
 	 */
-	public function getByte(string $name, ?int $default = null, bool $badTagDefault = false) : int{
+	public function getByte(string $name, int $default = null, bool $badTagDefault = false) : int{
 		return $this->getTagValue($name, ByteTag::class, $default, $badTagDefault);
 	}
 
